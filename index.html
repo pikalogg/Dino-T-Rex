@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .form {
+            width: 500px;
+            height: auto;
+            margin: auto;
+            text-align: center;
+            box-shadow: 1px 1px 1px 1px #a29898;
+            position: relative;
+        }
+        
+        h2 {
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            font-family: sans-serif;
+            padding: 3em 1em 6em;
+        }
+        
+        input[type="button"] {
+            padding: 1em 2em;
+            width: 172px;
+            margin-right: 1em;
+            margin-bottom: 4em;
+            border-radius: 99999px;
+            cursor: pointer;
+            border: none;
+            box-shadow: 1px 1px 1px 1px #bdaeae;
+            outline: none;
+        }
+        
+        input[type="button"]:hover {
+            background-color: red;
+            color: white;
+            transition: 0.3s ease;
+            box-shadow: none;
+        }
+        
+        input#nothing {
+            position: absolute;
+            bottom: 0px;
+            right: 259px;
+        }
+        
+        input#have {
+            position: absolute;
+            bottom: 0px;
+            left: 259px;
+        }
+        
+        .image {
+            display: none;
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form" id="form">
+        <h2>Có yêu anh không nè ?</h2>
+        <input type="button" value="Có Nè" id="have">
+        <input type="button" value="Không nha" id="nothing">
+    </div>
+    <div class="image" id="image">
+        <img src="haha.jpg" alt="pika haha">
+    </div>
+    <script>
+        document.getElementById("nothing").onmouseover = function() {        
+            document.getElementById("nothing").style.bottom = Math.floor(Math.random() * 570) - 420 + 'px'; 
+            document.getElementById("nothing").style.right = Math.floor(Math.random() * 1100) - 400 + 'px'; 
+
+        };
+        document.getElementById("nothing").onclick = function() {    
+            alert('Nút này hết hạn sử dụng rồi');  
+            document.getElementById("nothing").style.display =  'none';  
+            document.getElementById("have").style.left = 170 + 'px'; 
+        };
+        document.getElementById("have").onclick = function() {    
+            alert('Thơm cái nè');    
+            document.getElementById("image").style.display =  'block';
+            document.getElementById("form").style.display =  'none';
+        };
+    </script>
+</body>
+
+</html>
